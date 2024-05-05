@@ -7,4 +7,5 @@ insert into stud values ("ishaan", 9);
 alter table stud add id varchar(10);
 desc stud;
 select * from stud;
-insert into stud (roll_no) values (8);
+insert into stud (roll_no) values (8); 
+ALTER TABLE stud DROP COLUMN id;
