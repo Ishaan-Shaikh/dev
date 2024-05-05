@@ -1,0 +1,863 @@
+ 1
+Department of Computer Engineering
+LABORATORY MANUAL
+DATABASE MANAGEMENT SYSTEMS LAB
+S.Y. BTECH
+SEMESTER V
+DEPARTMENT OF COMPUTER
+ENGINEERING
+Prof. Madhavi Patil,
+Prof. Priyadarshini Patil
+ 2
+Department of Computer Engineering
+List of Experiments
+Sr. No. Experiment
+1
+Design an Entity-Relationship (ER) / Extended Entity-Relationship (EER)
+Model for any application
+2
+Design and Develop SQL DDL statements which demonstrate the use of SQL
+objects such as Table, View, Index, Sequence, Synonym
+3
+Design at least 10 SQL queries for suitable database application using SQL
+DML statements: Insert, Select, Update, Delete with operators, functions, and
+set operator, Joins.
+4
+Consider table Stud (Roll, Att, Status) Write a PL/SQL block for following
+requirement and handle the exceptions Roll no. of student will be entered by
+user. Attendance of roll no. entered by user will be checked in Stud table. If
+attendance is less than 75% then display the message “Term not granted” and
+set the status in stud table as “D”. Otherwise display message “Term granted”
+and set the status in stud table as “ND
+5
+Write a stored function in PL/SQL for given requirement and use the same in
+PL/SQL block. Account no. and branch name will be accepted from user. The
+same will be searched in table acct_details. If status of account is active then
+display appropriate message and also store the account details in
+active_acc_details table, otherwise display message on screen “account is
+inactive.
+6
+Write a Stored Procedure namely proc_Grade for the categorization of student.
+If marks scored by students in examination is <=1500 and marks>=990 then
+student will be placed in distinction category if marks scored are between 989
+and900 category is first class, if marks 899 and 825 category is Higher Second
+Class Write a PL/SQL block for using procedure created with above
+requirement. 1. Stud_Marks(name, total_marks) 2. Result(Roll,Name, Class
+7 Implement Types of trigger on student table.
+8 Demonstrate Database connectivity with front end and back end.
+9 Implement Basic CRUD operations on any database using MONGODB.
+ 3
+Department of Computer Engineering
+Assignment No 1
+Title: Design an Entity-Relationship (ER) / Extended Entity-Relationship (EER) Model for Bus
+reservation system
+Introduction of ER Model
+The Entity Relational Model is a model for identifying entities to be represented in the database and
+representation of how those entities are related. The ER data model specifies enterprise schema that
+represents the overall logical structure of a database graphically.
+The Entity Relationship Diagram explains the relationship among the entities present in the database.
+ER models are used to model real-world objects like a person, a car, or a company and the relation
+between these real-world objects. In short, the ER Diagram is the structural format of the database.
+Why Use ER Diagrams In DBMS?
+ ER diagrams are used to represent the E-R model in a database, which makes them easy to
+convert into relations (tables).
+ ER diagrams provide the purpose of real-world modeling of objects which makes them intently
+useful.
+ ER diagrams require no technical knowledge and no hardware support.
+ These diagrams are very easy to understand and easy to create even for a naive user.
+ It gives a standard solution for visualizing the data logically.
+Symbols Used in ER Model
+ER Model is used to model the logical view of the system from a data perspective which consists of
+these symbols:
+ 4
+Department of Computer Engineering
+Enhanced ER Model
+Today the complexity of the data is increasing so it becomes more and more difficult to use the
+traditional ER model for database modeling. To reduce this complexity of modeling we have to
+make improvements or enhancements to the existing ER model to make it able to handle the
+complex application in a better way.
+Enhanced entity-relationship diagrams are advanced database diagrams very similar to regular ER
+diagrams which represent the requirements and complexities of complex databases. It is a
+diagrammatic technique for displaying the Sub Class and Super Class; Specialization and
+Generalization; Union or Category; Aggregation etc.
+Here are some of the key features of the EER model:
+ Subtypes and Super-types: The EER model allows for the creation of subtypes and supertypes. A super-type is a generalization of one or more subtypes, while a subtype is a
+specialization of a super-type. For example, a vehicle could be a super-type, while car, truck,
+and motorcycle could be subtypes.
+ Generalization and Specialization: Generalization is the process of identifying common
+attributes and relationships between entities and creating a super-type based on these common
+features. Specialization is the process of identifying unique attributes and relationships between
+entities and creating subtypes based on these unique features.
+ Inheritance: Inheritance is a mechanism that allows subtypes to inherit attributes and
+relationships from their super-type. This means that any attribute or relationship defined for a
+super-type is automatically inherited by all its subtypes.
+ Constraints: The EER model allows for the specification of constraints that must be satisfied
+by entities and relationships. Examples of constraints include cardinality constraints, which
+specify the number of relationships that can exist between entities, and participation
+constraints, which specify whether an entity is required to participate in a relationship.
+Conclusion: We have designed E-R Diagram for Bus reservation System.
+ 5
+Department of Computer Engineering
+Assignment No. 2
+Title: Design and Develop SQL DDL statements which demonstrate the use of SQL objects such as
+Table, View, Index, Sequence, Synonym.
+What is MY SQL?
+MySQL is the world's most popular open source database. With its proven performance,
+reliability and ease-of-use, MySQL has become the leading database choice for web-based
+applications, used by high profile web properties including Facebook, Twitter, YouTube,
+Yahoo! and many more.
+MySQL is a very powerful program in its own right. It handles a large subset of the
+functionality of the most expensive and powerful database packages. MySQL uses a standard
+form of the well- known SQL data language.
+MySQL works on many operating systems and with many languages including PHP, PERL,
+C,C++, JAVA, etc. MySQL works very quickly and works well even with large data sets.
+There is three types of commands are used in database that is :-
+1) DDL (Data Definition Language)
+2) DML (Data Manipulation Language)
+3) DCL (Data Control Language)
+1) DDL :- i) It Is Stands For Data Definition Language
+ii) It is used for manipulate the data.
+iii) DDL statements are used to define the database structure or schema.
+Operations performs on DDL are:-
+1. Create operation
+a) Create database :- The CREATE DATABASE statement is used to create
+a newSQL database.
+Syntax:- CREATE DATABASE databasename;
+b) Create Table :- It is used for To Create a Table.
+Syntax:- CREATE TABLE table_name ( column1 datatype, column2
+datatype,column3 datatype, );
+2. Alter Table :- The ALTER TABLE statement is used to add, delete, or modify
+columns inan existing table
+ 6
+Department of Computer Engineering
+The ALTER TABLE statement is also used to add and drop various constraints on an existing
+tableand alters the structure of the database
+ALTER TABLE - ADD Column
+To add a column in a table, use the following syntax :-
+ALTER TABLE table_name
+ADD column_name
+datatype;ALTER TABLE - DROP
+COLUMN
+To delete a column in a table, use the following syntax (notice that some
+databasesystems don't allow deleting a column)
+Syntax:- ALTER TABLE table_name
+DROP COLUMN
+column_name;ALTER TABLE - ALTER/MODIFY
+COLUMN
+To change the data type of a column in a table, use the following syntax :-
+ALTER TABLE table_name
+ALTER COLUMN column_name datatype;
+1) Drop Table :- The DROP TABLE statement is used to drop an existing table
+in adatabase.
+Syntax:-DROP TABLE table_name;
+2) Truncate Table :- The TRUNCATE TABLE statement is used to delete the
+datainside a table, but not the table itself.
+Syntax:-TRUNCATE TABLE table_name ;
+3) Rename Table :- It is used to rename an object . It is used for give
+anothername to the table.
+Syntax :- Rename old_table name to New_table name ;
+SQL Objects :-
+1) Table
+A table is a collection of related data held in a structure format within database it
+consists of column and row a table is a set of data elements using a model of vertical
+column and horizontal rows the cell being the init where a row and column insert .
+ 7
+Department of Computer Engineering
+2) View
+In SQL, a view is a virtual table based on the result-set of an SQL statement.A view
+containsrows and columns, just like a real table. The fields in a view are fields from
+one or more real tables in the database.
+You can add SQL functions, WHERE, and JOIN statements to a view and present the
+data asif the data were coming from one single table.
+CREATE VIEW
+Syntax :- CREATE VIEW view_name AS SELECT column1, column2, ...
+FROM table_name WHERE condition;
+a) SQL CREATE OR REPLACE VIEW Syntax
+CREATE OR REPLACE VIEW view_name
+ASSELECT column1, column2, ...
+FROM
+table_name
+WHERE
+condition;
+b) SQL Dropping a View
+You can delete a view with the DROP VIEW command.
+DROP View Syntax:-DROP VIEW view_name;
+3) Index
+Indexes are used to retrieve data from the database very fast. The users cannot
+see theindexes, they are just used to speed up searches/queries.
+a) CREATE INDEX :- Creates an index on a table. Duplicate values are allowed:
+Syntax:- CREATE INDEX index_name
+ON table_name (column1, column2, ...);
+b) CREATE UNIQUE INDEX :-Creates a unique index on a table. Duplicate values
+are notallowed:
+Syntax:- CREATE UNIQUE INDEX index_name
+ON table_name (column1, column2, ...);
+4) Sequence :-
+Auto-increment allows a unique number to be generated automatically when a new
+ 8
+Department of Computer Engineering
+record isinserted into a table.
+Often this is the primary key field that we would like to be created automatically
+every timea new record is inserted.
+Syntax :- Create table < table_name > (variable_name datatype primary key
+autoincrement , variable_name data type);
+Conclusion: Here we understood the DDL command and SQL object like, TABLE, VIEW
+INDEX and SEQUENCES operations using DDL commands.
+ 9
+Department of Computer Engineering
+Assignment No. 3
+Title: Design at least 10 SQL queries for suitable database application using SQL DML statements:Insert,
+Select, Update, Delete with operators, functions, and set operator.
+What is SQL?
+SQL stands for Structured Query Language. SQL is used to communicate with a database.
+According to ANSI (American National Standards Institute), it is the standard language for relational
+database management systems. SQL statements are used to perform tasks such as update data on a
+database, or retrieve data from a database. Some common relational database management systems
+that use SQL are: Oracle, Sybase, Microsoft SQL Server, Access, Ingres, etc. Although most
+database systems use SQL, most of them also have their own additional proprietary extensions that
+are usually only used on their system. However, the standard SQL commands such as "Select",
+"Insert", "Update", "Delete", "Create", and "Drop" can be used to accomplish almost everything that
+one needs to do with a database.
+SQL Languages:
+1. DDL (Data Definition Language).
+2. DML (Data Manipulation Languages)
+3. DCL (Data Control Languages).
+What is DML?
+A popular data manipulation language is that of Structured Query Language (SQL), which is used to
+retrieve and manipulate data in a relational database. It is used to manipulate data itself. Data
+manipulation language comprises the SQL data change statements, which modify stored data but not
+the schema or database objects. For example, with SQL, it would be instructions such as insert,
+update, and delete.
+Insert: The INSERT statement is used to insert new records in a table.
+Syntax: It is possible to write the INSERT statement in two ways. The first way specifies both
+the column names and the values to be inserted:
+ 10
+Department of Computer Engineering
+INSERT INTO table_name (column1, column2, column3 ...)
+VALUES (value1, value2, value3, ...);
+If you are adding values for all the columns of the table, you do not need to specify the column
+names in the SQL query. However, make sure the order of the values is in the same order as the
+columns in the table. The INSERT syntax would be as follows:
+INSERT INTO table_name VALUES
+(value1, value2, value3, ...);
+Select:
+The SELECT statement is used to select data from a database. The data returned is stored in a
+result table, called the result-set.
+Syntax:
+SELECT column1, column2 ...
+FROM table_name;
+Here, column1, column2 ... are the field names of the table you want to select data from. If you
+want to select all the fields available in the table, use the following syntax:
+SELECT * FROM table_name;
+Update:
+The UPDATE statement is used to modify the existing records in a table.
+Syntax: UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+Delete:
+The DELETE statement is used to delete existing records in a table.
+Syntax:
+DELETE FROM table_name
+WHERE condition;
+What is Functions?
+A user-defined function is a Transact-SQL or common language runtime (CLR) routine that
+accepts parameters, performs an action, such as a complex calculation, and returns the result of that
+action as a value. The return value can either be a scalar (single) value or a table. SQL Server has
+many built-in functions. This reference contains the string, numeric, date, conversion, and advanced.
+ 11
+Department of Computer Engineering
+The SQL Functions are: MIN(),MAX(),COUNT(),AVG(),SUM() and ORDERBY().
+MIN():The MIN() function returns the smallest value of the selected column.
+Syntax:
+SELECT MIN(column_name)
+FROM table_name
+WHERE condition;
+MAX():The MAX() function returns the largest value of the selected column.
+Syntax:
+SELECT MAX(column_name)
+FROM table_name
+WHERE condition;
+COUNT():The COUNT() function returns the number of rows that matches a specified
+criteria.
+Syntax:
+SELECT COUNT(column_name)
+FROM table_name
+WHERE condition;
+AVG():The AVG() function returns the average value of a numeric column.
+Syntax:
+SELECT AVG(column_name)
+FROM table_name
+WHERE condition;
+SUM():The SUM() function returns the total sum of a numeric column.
+Syntax:
+SELECT SUM(column_name)
+FROM table_name
+WHERE condition;
+ORDERBY(): The ORDER BY keyword is used to sort the result-set in ascending or
+ 12
+Department of Computer Engineering
+descending order. The ORDER BY keyword sorts the records in ascending order by default.
+To sort the records in descending order, use the DESC keyword.
+Syntax:
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1, column2, ... ASC|DESC;
+What is operators?
+An operator is a reserved word or a character used primarily in an SQL statement's WHERE
+clause to perform operation(s), such as comparisons and arithmetic operations. These Operators are
+used to specify conditions in an SQL statement and to serve as conjunctions for multiple conditions
+n a statement.
+The Operators are: AND, OR, NOT, BETWEEN, LESS THAN,GREATER THAN.
+AND: The WHERE clause can be combined with AND operators. The AND operators are
+used to filter records based on more than one condition. The AND operator displays a record
+if all the conditions separated by AND is TRUE.
+Syntax:
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 AND condition3 ...;
+OR: The WHERE clause can be combined with OR operators. The OR operators are used to
+filter records based on more than one condition: The OR operator displays a record if any of
+the conditions separated by OR is TRUE.
+Syntax:
+SELECT column1, column2, ...
+FROM table_name
+ 13
+Department of Computer Engineering
+WHERE condition1 OR condition2 OR condition3 ...;
+NOT:The WHERE clause can be combined with AND, OR, and NOT operators.The NOT
+operator displays a record if the condition(s) is NOT TRUE.
+Syntax:
+SELECT column1, column2, ...
+FROM table_name
+WHERE NOT condition;
+BETWEEN: The BETWEEN operator selects values within a given range. The values can
+be numbers, text, or dates. The BETWEEN operator is inclusive: begin and end values are
+included.
+Syntax:
+SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+LESS THAN: Less than operator is used to find out less value from table. We can used
+WHERE clause.
+Database Management Systems Lab
+14
+Department of Computer Engineering
+Syntax:
+SELECT * from table_name WHERE condition;
+GREATER THAN: Greater than operator is used to find out greater value
+from table. Wecan used WHERE clause.
+Syntax:
+SELECT * from table_name WHERE condition;
+Conclusion: We have studied SQL DML commands and SQL Functions and
+Operators and performall the queries on database table.
+Database Management Systems Lab
+15
+Department of Computer Engineering
+Assignment No.4
+WHAT IS PL/SQL?
+In Oracle database management, PL/SQL is a procedural language extension to Structured
+Query Language (SQL). The purpose of PL/SQL is to combine database language and
+procedural programming language.
+FEATURES OF PLSQL
+ PL/SQL is tightly integrated with SQL.
+ It offers extensive error checking.
+ It offers numerous data types.
+ It offers a variety of programming structures.
+ It supports structured programming through functions and procedures.
+ It supports object-oriented programming.
+ It supports the development of web applications and server pages.
+DIFFERENCE BETWEEN SQL AND
+PL/SQL
+S. No. SQL PL/SQL
+1. SQL Stands for Structured Query
+Language
+PL/SQL stands for Programming Language
+SQL.
+2. SQL is used to execute single query
+or statement at a time.
+PL/SQL is used to execute block of code or
+program that have multiple statements.
+3.
+SQL tells the database what to do
+but not how to do. So it is
+declarative.
+PL/SQL tells the database how to do things. So
+it is procedural.
+4. SQL can be used in PL/SQL
+programs.
+PL/SQL can‟t be used in SQL statement.
+5.
+SQL is used with various database
+systems like MySQL, SQL Server,
+Oracle, DB2, etc.
+PL/SQL is used only with Oracle database.
+Database Management Systems Lab
+16
+Department of Computer Engineering
+6.
+An example of SQL query is given
+below.
+SELECT * FROM Customers;
+An example of PL/SQL program is given
+below.
+BEGIN
+dbms_output.put_line(„Hello Workd‟);
+END;/
+Advantages of PL/SQL are as follows:
+1. PL/SQL is structured as it consists of blocks of code and hence streamlined. This
+makesPL/SQL highly productive.
+2. It is highly portable, has immense error handling mechanisms.
+3. High performance as lines of code can be sent to oracle. This reduces traffic.
+4. With the user of stored procedures, PL/SQL is highly secured.
+5. Extremely flexible and easy to learn with syntaxes like SELECT, INSERT,
+UPDATE etc.
+6. Support SQL data manipulation.
+7. Provide facilities like conditional checking, branching and looping.
+8. Provide fast code execution since it sends SQL statement as a block to the oracle
+engine.
+Database Management Systems Lab
+17
+Department of Computer Engineering
+ARCHITECTURES OF
+PL/SQL
+PL/SQL Engine:
+The PL/SQL compilation and run-time system is an engine that compiles and runs
+PL/SQL units. The engine can be installed in the database or in an application
+development tool, such as Oracle Forms.
+In either environment, the PL/SQL engine accepts as input any valid PL/SQL unit. The
+engine runs procedural statements, but sends SQL statements to the SQL engine in the
+database, as shown in figure.
+Typically, the database processes PL/SQL units.
+When an application development tool processes PL/SQL units, it passes them to its local
+PL/SQL engine. If a PL/SQL unit contains no SQL statements, the local engine processes
+the entire PL/SQL unit. This is useful if the application development tool can benefit from
+conditional and iterative control.
+For example, Oracle Forms applications frequently use SQL statements to test the values
+of field entries and do simple computations. By using PL/SQL instead of SQL, these
+applications can avoid calls to the database.
+PL/SQL Units and Compilation Parameters
+A PL/SQL unit is one of these:
+ PL/SQL anonymous block
+ FUNCTION
+ LIBRARY
+Database Management Systems Lab
+18
+Department of Computer Engineering
+ PACKAGE
+ PACKAGE BODY
+ PROCEDURE
+ TRIGGER
+ TYPE
+ TYPE BODY
+BLOCK STRUCTURE OF
+PL/SQL
+PL/SQL blocks have a pre-defined structure in which the code is to be grouped. Below
+are differentsections of PL/SQL blocks
+ Declaration section
+ Execution section
+ Exception-Handling section
+The below picture illustrates the different PL/SQL block and their section order.
+Declaration Section
+This is the first section of the PL/SQL blocks. This section is an optional part. This is
+the section in which the declaration of variables, cursors, exceptions, subprograms,
+pragma instructions and collections that are needed in the block will be declared.
+Below are few more characteristics of this part.
+ This particular section is optional and can be skipped if no declarations are needed.
+ This should be the first section in a PL/SQL block, if present.
+ This section starts with the keyword 'DECLARE' for triggers and anonymous block.
+For other subprograms this keyword will not be present, instead the part after the
+subprogram name definition marks the declaration section.
+ This section should be always followed by execution section.
+Execution Section
+Execution part is the main and mandatory part which actually executes the code that is
+written inside it. Since the PL/SQL expects the executable statements from this block
+this cannot be an empty block, i.e., it should have at least one valid executable code
+Database Management Systems Lab
+19
+Department of Computer Engineering
+line in it. Below are few more characteristics of this part.
+ This can contain both PL/SQL code and SQL code.
+ This can contain one or many blocks inside it as a nested blocks.
+ This section starts with the keyword 'BEGIN'.
+ This section should be followed either by 'END' or Exception-Handling section (if
+present)
+Exception-Handling Section:
+The exception are unavoidable in the program which occurs at run-time and to handle
+this Oracle hasprovided an Exception-handling section in blocks. This section can also
+contain PL/SQL statements. This is an optional section of the PL/SQL blocks.
+ This is the section where the exception raised in the execution block is handled.
+ This section is the last part of the PL/SQL block.
+ Control from this section can never return to the execution block.
+ This section starts with the keyword 'EXCEPTION'.
+ This section should be always followed by the keyword 'END'.
+The Keyword 'END' marks the end of PL/SQL block.
+Database Management Systems Lab
+20
+Department of Computer Engineering
+Assignment No. 5
+Stored function in SQL
+The CREATE FUNCTION statement is used for creating a stored function and userdefined functions. A stored function is a set of SQL statements that perform some operation
+and return a single value.
+Just like Mysql in-built function, it can be called from within a Mysql statement.
+By default, the stored function is associated with the default database.
+The CREATE FUNCTION statement require CREATE ROUTINE database privilege.
+Syntax:
+The syntax for CREATE FUNCTION statement in Mysql is:
+CREATE FUNCTION function_name(func_parameter1, func_parameter2, ..)
+ RETURN datatype [characteristics]
+func_body
+Parameters used:
+1. function_name:
+It is the name by which stored function is called. The name should not be same as
+native(built_in) function. In order to associate routine explicitly with a specific database
+function name should be given as database_name.func_name.
+2. func_parameter:
+It is the argument whose value is used by the function inside its body. You can’t specify
+to these parameters IN, OUT, INOUT. The parameter declaration inside parenthesis is
+provided as func_parameter type. Here, type represents a valid Mysqldatatype.
+3. datatype:
+It is datatype of value returned by function.
+4. Characteristics:
+The CREATE FUNCTION statement is accepted only if at least one of the
+characteristics {DETERMINISTIC, NO SQL, or READS SQL DATA} is specified in
+its declaration.
+func_body is the set of Mysql statements that perform operation. It’s structure is as follows:
+BEGIN
+sql Statements
+Database Management Systems Lab
+21
+Department of Computer Engineering
+ RETURN expression;
+END
+The function body must contain one RETURN statement.
+Example:
+Consider following Employee Tableemp_id fname lname start_date
+1 Michael Smith 2001-06-22
+2 Susan Barker 2002-09-12
+3 Robert Tvler 2000-02-09
+4 Susan Hawthorne 2002-04-24
+We have to find the number of years the employee has been in the companyDELIMITER //
+CREATE FUNCTION no_of_years(date1 date) RETURNS int DETERMINISTIC
+BEGIN
+DECLARE date2 DATE;
+ Select current_date()into date2;
+ RETURN year(date2)-year(date1);
+END
+//
+DELIMITER;
+Calling of above function:
+Select emp_id, fname, lname, no_of_years(start_date) as 'years' from employee;
+Database Management Systems Lab
+22
+Department of Computer Engineering
+Output:
+emp_id fname lname years
+1 Michael Smith 18
+2 Susan Barker 17
+3 Robert Tvler 19
+4 Susan Hawthorne 17
+Database Management Systems Lab
+23
+Department of Computer Engineering
+Assignment No. 6
+Stored procedures in SQL
+Stored procedures are prepared SQL code that you save so you can reuse it over and over
+again. So if you have an SQL query that you write over and over again, save it as a stored
+procedure and call it to run it. You can also pass parameters to stored procedures so that the
+stored procedure can act on the passed parameter values.
+Stored Procedures are created to perform one or more DML operations on Database. It is
+nothing but the group of SQL statements that accepts some input in the form of parameters
+and performs some task and may or may not return a value.
+Syntax:
+Creating a Procedure
+CREATE PROCEDURE procedure_name
+(parameter1 data_type, parameter2 data_type, …)
+AS
+BEGIN
+— SQL statements to be executed
+END
+To Execute the procedure
+EXEC procedure_name parameter1_value, parameter2_value, ..
+Parameter Explanation
+The most important part is the parameters. Parameters are used to pass values to the
+Procedure. There are different types of parameters, which are as follows:
+1. BEGIN: This is what directly executes or we can say that it is an executable part.
+2. END: Up to this, the code will get executed.
+Example:
+Imagine a database named “SampleDB”, a table named “Customers” with some sample data,
+and a stored procedure named” GetCustomersByCountry”. The stored procedure takes the
+parameter “Country” and returns a list of customers from the “Customers” table that matches
+the specified country. Finally, the stored procedure is executed with the parameter “Sri
+Lanka” to retrieve the list of customers from Sri Lanka.
+Database Management Systems Lab
+24
+Department of Computer Engineering
+Query:
+-- Create a new database named "SampleDB"
+CREATE DATABASE SampleDB;
+-- Switch to the new database
+USE SampleDB;
+-- Create a new table named "Customers"
+CREATE TABLE Customers (
+CustomerID INT PRIMARY KEY,
+CustomerNameVARCHAR(50),
+ContactNameVARCHAR(50),
+ Country VARCHAR(50)
+);
+-- Insert some sample data into the Customers table
+INSERT INTO Customers (CustomerID, CustomerName, ContactName, Country)
+VALUES (1, 'Shubham', 'Thakur', 'India'),
+ (2, 'Aman ', 'Chopra', 'Australia'),
+ (3, 'Naveen', 'Tulasi', 'Srilanka'),
+ (4, 'Aditya', 'Arpan', 'Austria'),
+ (5, 'Nishant. Salchichas S.A.', 'Jain', 'Spain');
+-- Create a stored procedure named "GetCustomersByCountry"
+CREATE PROCEDURE GetCustomersByCountry
+ @Country VARCHAR(50)
+AS
+BEGIN
+ SELECT CustomerName, ContactName
+Database Management Systems Lab
+25
+Department of Computer Engineering
+ FROM Customers
+ WHERE Country = @Country;
+END;
+-- Execute the stored procedure with parameter "Sri lanka"
+EXEC GetCustomersByCountry @Country = 'Sri lanka';
+Note: You will need to make sure that the user account has the necessary privileges to create
+a database. You can try logging in as a different user with administrative privileges or contact
+the database administrator to grant the necessary privileges to your user account. If you are
+using a cloud-based database service, make sure that you have correctly configured the user
+account and its permissions.
+Output:
+CustomerName Contact Name
+Naveen Tulasi
+Database Management Systems Lab
+26
+Department of Computer Engineering
+Assignment No. 7
+SQL | Triggers
+Trigger is a statement that a system executes automatically when there is any modification to
+the database. In a trigger, we first specify when the trigger is to be executed and then the
+action to be performed when the trigger executes. Triggers are used to specify certain
+integrity constraints and referential constraints that cannot be specified using the constraint
+mechanism of SQL.
+Example –
+Suppose, we are adding a tuple to the ‘Donors’ table that is some person has donated blood.
+So, we can design a trigger that will automatically add the value of donated blood to the
+‘Blood_record’ table.
+Types of Triggers –
+We can define 6 types of triggers for each table:
+1. AFTER INSERT activated after data is inserted into the table.
+2. AFTER UPDATE: activated after data in the table is modified.
+3. AFTER DELETE: activated after data is deleted/removed from the table.
+4. BEFORE INSERT: activated before data is inserted into the table.
+5. BEFORE UPDATE: activated before data in the table is modified.
+6. BEFORE DELETE: activated before data is deleted/removed from the table.
+Examples showing implementation of Triggers:
+Write a trigger to ensure that no employee of age less than 25 can be inserted in the
+database.
+delimiter $$
+CREATE TRIGGER Check_age BEFORE INSERT ON employee
+FOR EACH ROW
+BEGIN
+IF NEW.age< 25 THEN
+SIGNAL SQLSTATE '45000'
+Database Management Systems Lab
+27
+Department of Computer Engineering
+SET MESSAGE_TEXT = 'ERROR:
+ AGE MUST BE ATLEAST 25 YEARS!';
+END IF;
+END; $$
+delimiter;
+Explanation: Whenever we want to insert any tuple to table ’employee’, then before
+inserting this tuple to the table, trigger named ‘Check_age’ will be executed. This trigger
+will check the age attribute. If it is greater than 25 then this tuple will be inserted into the
+tuple otherwise an error message will be printed stating “ERROR: AGE MUST BE
+ATLEAST 25 YEARS!”
+Database Management Systems Lab
+28
+Department of Computer Engineering
+Assignment No. 8
+Demonstrate Database connectivity with front end and back end
+For Example
+How to connect the frontend to the backend MySQL react js and store data in the
+database?Connecting a frontend built with React.js to a backend that interacts with MySQL
+involves several steps. that how to achieve this:Set Up Our Backend (Node.js and Express)
+So we have Node.js and npm installed from the start:
+1. Create a new folder for your backend and navigate to it in your terminal.
+2. Initialize a new Node.js project: npminit–y
+3. Install Express and MySQL packages: npm install express mysql
+2. Create a MySQL Database
+Make sure we have the MySQL server installed and running. Create a new database for our
+application.
+3. Set Up Our Backend Server
+Create the necessary routes and endpoints to handle HTTP requests and interact with the
+MySQL database. Now we’ll need to create routes for handling data retrieval, insertion,
+updating, and deletion.
+Here’s an example of how We might structure Our backend code:
+const express = require(‘express’);
+constmysql = require(‘mysql’);
+const app = express();
+const port = 3000; // we can change our port
+constdb = mysql.createConnection({
+host: ‘localhost’,
+user: ‘root’,
+password: ‘ ’,
+database: ‘your_database_name’,
+});
+db.connect((err) => {
+if (err) throw err;
+Database Management Systems Lab
+29
+Department of Computer Engineering
+console.log(‘Connected to MySQL database’);
+});
+app.use(express.json());
+// Define your API routes and database interactions here
+app.post(‘/api/students’, (req, res) => {
+const { name, email, dob, gender } = req.body;
+constsql = ‘INSERT INTO students (name, email, dob, gender) VALUES (?, ?, ?, ?)’;
+db.query(sql, [name, email, dob, gender], (err, result) => {
+if (err) {
+console.error(err);
+res.status(500).send(‘Error saving data’);
+} else {
+res.status(201).send(‘Data saved successfully’);
+}
+});
+});
+app.listen(port, () => {
+console.log(`Server is running on port ${port}`);
+});
+4. Create API EndpointsSet up API endpoints that interact with Our MySQL database. For
+instance, we might have endpoints to retrieve, create, update, and delete student records.
+5. Set Up Our React Frontend
+Assuming we’ve already created a React app, you can use the fetch API or libraries
+like axios to make HTTP requests to our backend API and we can call API in one line very
+simple way by using axios but first of all, we need to install i.
+Database Management Systems Lab
+30
+Department of Computer Engineering
+Install Axios: npm install axios
+6. Make API Calls from ReactIn Our React components, use axios (or fetch) to make API
+requests to Our backend endpoints. For instance, when submitting a student registration
+form:Here is the example of registration form
+import React, { useState } from ‘react’;
+import axios from ‘axios’;
+function StudentRegistrationForm() {
+const [name, setName] = useState(‘’);
+const [email, setEmail] = useState(‘’);
+const [dob, setDob] = useState(‘’);
+const [gender, setGender] = useState(‘’);
+consthandleSubmit = async (e) => {
+e.preventDefault();
+try {
+const response = await axios.post(‘/api/students’, {
+name,
+email,
+dob,
+gender,
+});
+console.log(response.data);
+} catch (error) {
+console.error(error);
+}
+};
+return (
+<form onSubmit={handleSubmit}>
+Database Management Systems Lab
+31
+Department of Computer Engineering
+{/* Form fields here */}
+<button type=”submit”>Register</button>
+</form>
+);
+}
+export default StudentRegistrationForm;
+7. Handle API Requests on the Backend
+In Our Express backend, handle the incoming requests, validate data, and interact with the
+MySQL database using the mysql library. Your backend route might look something like this:
+but now we do not need to include this part because I have already included it in my index.js
+file if you didn’t then you can include it.
+app.post(‘/api/students’, (req, res) => {
+const { name, email, dob, gender } = req.body;
+constsql = ‘INSERT INTO students (name, email, dob, gender) VALUES (?, ?, ?, ?)’;
+db.query(sql, [name, email, dob, gender], (err, result) => {
+if (err) {
+console.error(err);
+res.status(500).send(‘Error saving data’);
+} else {
+res.status(201).send(‘Data saved successfully’);
+}
+});
+});
+Now we need to install something in our app package.js
+npm install nodemon — save-dev
+now Open your package.json file and add the following line within the "scripts" section:
+Database Management Systems Lab
+32
+Department of Computer Engineering
+“scripts”: {
+“start”: “node index.js”
+}
+Now finally you can run your app by using this command.
+nodemon index.js / npm start
+Database Management Systems Lab
+33
+Department of Computer Engineering
+Assignment No. 9
+MongoDB CRUD operations
+As we know that we can use MongoDB for various things like building an application
+(including web and mobile), or analysis of data, or an administrator of a MongoDB
+database, in all these cases we need to interact with the MongoDB server to perform certain
+operations like entering new data into the application, updating data into the application,
+deleting data from the application, and reading the data of the application. MongoDB
+provides a set of some basic but most essential operations that will help you to easily
+interact with the MongoDB server and these operations are known as CRUD operations
+Create Operations –
+The create operations are used to insert or add new documents in the collection. If a
+collection does not exist, then it will create a new collection in the database. You can
+perform, create operations using the following methods provided by the MongoDB:
+Method Description
+db.collection.insertOne() It is used to insert a single document in the collection.
+db.collection.insertMany() It is used to insert multiple documents in the collection.
+db.createCollection() It is used to create an empty collection.
+Database Management Systems Lab
+34
+Department of Computer Engineering
+Read Operations –
+The Read operations are used to retrieve documents from the collection, or in other words,
+read operations are used to query a collection for a document. You can perform read
+operation using the following method provided by the MongoDB:
+Method Description
+db.collection.find() It is used to retrieve documents from the collection.
+Update Operations –
+The update operations are used to update or modify the existing document in the collection.
+You can perform update operations using the following methods provided by the
+MongoDB:
+Method Description
+db.collection.updateOne()
+It is used to update a single document in the collection that
+satisfy the given criteria.
+db.collection.updateMany()
+It is used to update multiple documents in the collection that
+satisfy the given criteria.
+db.collection.replaceOne()
+It is used to replace single document in the collection that
+satisfy the given criteria.
+Delete Operations –
+The delete operation are used to delete or remove the documents from a collection. You can
+perform delete operations using the following methods provided by the MongoDB:
+Database Management Systems Lab
+35
+Department of Computer Engineering
+Method Description
+db.collection.deleteOne()
+It is used to delete a single document from the collection that
+satisfy the given criteria.
+db.collection.deleteMany()
+It is used to delete multiple documents from the collection that
+satisfy the given criteria.
